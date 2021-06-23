@@ -58,5 +58,28 @@ describe("ProgressCircle (Unit)", () => {
         );
       });
     });
+
+    describe("Progress Circle percent sign", () => {
+      test("should contain an x attribute of 60% when percent is less than 9", () => {
+        renderProgressCircle({ percentage: 9 });
+        const percentSign = screen.getByTestId("ProgressCircle-percentageSign");
+
+        expect(percentSign.getAttribute("x")).toBe("60%");
+      });
+
+      test("should contain an x attribute of 68% when percent is less than or equal to 99", () => {
+        renderProgressCircle({ percentage: 58 });
+        const percentSign = screen.getByTestId("ProgressCircle-percentageSign");
+
+        expect(percentSign.getAttribute("x")).toBe("70%");
+      });
+
+      test("should contain an x attribute of 75% when percent greater than 99", () => {
+        renderProgressCircle({ percentage: 100 });
+        const percentSign = screen.getByTestId("ProgressCircle-percentageSign");
+
+        expect(percentSign.getAttribute("x")).toBe("77%");
+      });
+    });
   });
 });

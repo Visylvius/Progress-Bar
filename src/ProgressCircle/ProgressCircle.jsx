@@ -1,5 +1,5 @@
 import React from "react";
-
+import { getXAttribute } from "./utils";
 import "./ProgressCircle.css";
 
 /** ProgressCircle Props
@@ -43,23 +43,17 @@ const ProgressCircle = ({ sqSize = 200, strokeWidth = 15, percentage = 0 }) => {
         }}
         data-testid="ProgressCircle-progressPercentage"
       />
-      <text
-        className="ProgressCircle-percentageText"
-        x="45%"
-        y="50%"
-        dy=".3em"
-        textAnchor="middle"
-      >
-        {`${percentage}`}
-      </text>
-      <text
-        className="ProgressCircle-percentageSign"
-        x={percentage >= 10 ? "68%" : "60%"}
-        y="40%"
-        dy=".3em"
-        textAnchor="middle"
-      >
-        %
+      <text className="ProgressCircle-percentageText" textAnchor="middle">
+        <tspan x="45%" y="50%" dy=".3em">{`${percentage}`}</tspan>
+        <tspan
+          className="ProgressCircle-percentageSign"
+          x={getXAttribute(percentage)}
+          y="45%"
+          textAnchor="middle"
+          data-testid="ProgressCircle-percentageSign"
+        >
+          %
+        </tspan>
       </text>
     </svg>
   );

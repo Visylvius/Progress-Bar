@@ -27,21 +27,24 @@ exports[`ProgressCircle (Unit) render should match snapshot 1`] = `
     />
     <text
       class="ProgressCircle-percentageText"
-      dy=".3em"
       text-anchor="middle"
-      x="45%"
-      y="50%"
     >
-      0
-    </text>
-    <text
-      class="ProgressCircle-percentageSign"
-      dy=".3em"
-      text-anchor="middle"
-      x="60%"
-      y="40%"
-    >
-      %
+      <tspan
+        dy=".3em"
+        x="45%"
+        y="50%"
+      >
+        0
+      </tspan>
+      <tspan
+        class="ProgressCircle-percentageSign"
+        data-testid="ProgressCircle-percentageSign"
+        text-anchor="middle"
+        x="60%"
+        y="45%"
+      >
+        %
+      </tspan>
     </text>
   </svg>
 </DocumentFragment>
