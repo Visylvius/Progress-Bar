@@ -1,0 +1,24 @@
+.ProgressCircle-background,
+.ProgressCircle-progressPercentage {
+  fill: none;
+}
+
+.ProgressCircle-background {
+  stroke: #ddd;
+}
+
+.ProgressCircle-progressPercentage {
+  stroke: #439df4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ProgressCircle-percentageText {
+  font-size: 4em;
+  fill: #303030;
+}
+
+.ProgressCircle-percentageSign {
+  fill: #ddd;
+  font-size: 1.5em;
+}
