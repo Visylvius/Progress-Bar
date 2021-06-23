@@ -5,7 +5,7 @@ import ProgressCircle from "./ProgressCircle";
 
 import "./App.css";
 
-function App() {
+const App = () => {
   // Determines if the Progress circle is active
   const [isActive, setIsActive] = useState(false);
   /** Current percentage, responsible for the text, and the calculation of the dashOffset */
@@ -48,6 +48,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;
